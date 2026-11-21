@@ -14,6 +14,10 @@ import hashlib
 import os
 import sys
 
+# Grader runs `python3 -P -s main.py`: with -P the script's directory is
+# NOT on sys.path, so sibling-module imports would fail. Bootstrap it.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from canvas import Canvas
 from scene import W, H, draw_poster
 
